@@ -1,31 +1,38 @@
 {
-	"name": "proof-general-keybindings-for-vscoq",
-	"displayName": "Proof General keybindings for VSCoq",
-	"description": "Provides keybindings for VSCoq that mimic Proof General",
-	"version": "0.2.0",
-	"publisher": "siegebell",
+	"name": "proof-general-keybindings-for-vsrocq",
+	"displayName": "Proof General keybindings for VSRocq",
+	"description": "Provides keybindings for VSRocq that mimic Proof General",
+	"version": "0.3.0",
+	"publisher": "peterlefanulumsdaine",
   "author": {
+    "name": "Peter LeFanu Lumsdaine",
+    "email": "p.l.lumsdaine@gmail.com",
+    "url": "http://peterlefanulumsdaine.com/"
+  },
+"contributors": [
+  {
     "name": "Christian J. Bell",
     "email": "siegebell@gmail.com",
     "url": "http://people.csail.mit.edu/cj/"
-  },
+  }
+],
   "license": "MIT",
 	"engines": {
-		"vscode": "^0.10.1"
+		"vscode": "^1.70.0"
 	},
 	"categories": [
 		"Keymaps"
 	],
   "keywords": [
-    "coq", "vscoq"
+    "rocq","vsrocq","coq", "vscoq"
   ],
-  "readme": "https://github.com/siegebell/vscoq-pg/blob/master/README.md",
-  "bugs": "https://github.com/siegebell/vscoq-pg/issues",
-  "homepage": "https://github.com/siegebell/vscoq-pg/blob/master/README.md",
+  "readme": "https://github.com/peterlefanulumsdaine/vscoq-pg/blob/master/README.md",
+  "bugs": "https://github.com/peterlefanulumsdaine/vscoq-pg/issues",
+  "homepage": "https://github.com/peterlefanulumsdaine/vscoq-pg/blob/master/README.md",
   "preview": true,
   "repository" :
   { "type" : "git"
-  , "url" : "https://github.com/siegebell/vscoq-pg.git"
+  , "url" : "https://github.com/peterlefanulumsdaine/vscoq-pg.git"
   },
 	"contributes": {
     "keybindings": [
@@ -35,34 +42,34 @@
       { "key": "shift+alt+i", "command": "editor.action.insertCursorAtEndOfEachLineSelected", "when": "editorTextFocus" },
       { "key": "ctrl+alt+down", "command": "editor.action.insertCursorBelow", "when": "editorTextFocus" },
 
-      {"key": "ctrl+c ctrl+r", "command": "extension.coq.reset", "when": "editorTextFocus && editorLangId == 'coq'" },
-      {"key": "ctrl+c ctrl+r", "command": "extension.coq.reset", "when": "resourceScheme==coq-view" },
-      {"key": "ctrl+c ctrl+c", "command": "extension.coq.interrupt", "when": "editorTextFocus && editorLangId == 'coq'" },
-      {"key": "ctrl+c ctrl+c", "command": "extension.coq.interrupt", "when": "resourceScheme==coq-view" },      
-      {"key": "ctrl+c ctrl+.", "command": "extension.coq.moveCursorToFocus", "when": "editorTextFocus && editorLangId == coq"},
+      {"key": "ctrl+c ctrl+r", "command": "extension.rocq.reset", "when": "editorTextFocus && editorLangId == 'rocq'" },
+      {"key": "ctrl+c ctrl+r", "command": "extension.rocq.reset", "when": "resourceScheme==rocq-view" },
+      {"key": "ctrl+c ctrl+c", "command": "extension.rocq.interrupt", "when": "editorTextFocus && editorLangId == 'rocq'" },
+      {"key": "ctrl+c ctrl+c", "command": "extension.rocq.interrupt", "when": "resourceScheme==rocq-view" },      
+      {"key": "ctrl+c ctrl+.", "command": "extension.rocq.moveCursorToFocus", "when": "editorTextFocus && editorLangId == rocq"},
 
-      {"key": "ctrl+c ctrl+n",     "command": "extension.coq.stepForward", "when": "editorTextFocus && editorLangId == 'coq'"},
-      {"key": "ctrl+c ctrl+n",     "command": "extension.coq.stepForward", "when": "resourceScheme==coq-view"},
-      {"key": "ctrl+c ctrl+u",     "command": "extension.coq.stepBackward", "when": "editorTextFocus && editorLangId == 'coq'" },
-      {"key": "ctrl+c ctrl+u",     "command": "extension.coq.stepBackward", "when": "resourceScheme==coq-view" },
-      {"key": "ctrl+c ctrl+enter", "command": "extension.coq.interpretToPoint", "when": "editorTextFocus && editorLangId == 'coq'" },
-      {"key": "ctrl+c ctrl+enter", "command": "extension.coq.interpretToPoint", "when": "resourceScheme==coq-view" },
-      {"key": "ctrl+c ctrl+b",     "command": "extension.coq.interpretToEnd", "when": "editorTextFocus && editorLangId == 'coq'" },
-      {"key": "ctrl+c ctrl+b",     "command": "extension.coq.interpretToEnd", "when": "resourceScheme==coq-view" },
+      {"key": "ctrl+c ctrl+n",     "command": "extension.rocq.stepForward", "when": "editorTextFocus && editorLangId == 'rocq'"},
+      {"key": "ctrl+c ctrl+n",     "command": "extension.rocq.stepForward", "when": "resourceScheme==rocq-view"},
+      {"key": "ctrl+c ctrl+u",     "command": "extension.rocq.stepBackward", "when": "editorTextFocus && editorLangId == 'rocq'" },
+      {"key": "ctrl+c ctrl+u",     "command": "extension.rocq.stepBackward", "when": "resourceScheme==rocq-view" },
+      {"key": "ctrl+c ctrl+enter", "command": "extension.rocq.interpretToPoint", "when": "editorTextFocus && editorLangId == 'rocq'" },
+      {"key": "ctrl+c ctrl+enter", "command": "extension.rocq.interpretToPoint", "when": "resourceScheme==rocq-view" },
+      {"key": "ctrl+c ctrl+b",     "command": "extension.rocq.interpretToEnd", "when": "editorTextFocus && editorLangId == 'rocq'" },
+      {"key": "ctrl+c ctrl+b",     "command": "extension.rocq.interpretToEnd", "when": "resourceScheme==rocq-view" },
 
-      {"key": "ctrl+c ctrl+i", "command": "extension.coq.query.prompt.locate", "when": "editorTextFocus && editorLangId == coq"},
-      {"key": "shift+ctrl+a", "mac": "shift+cmd+a", "command": "extension.coq.query.about", "when": "editorTextFocus && editorLangId == coq"},
-      {"key": "shift+ctrl+k", "mac": "shift+cmd+k", "command": "extension.coq.query.searchAbout", "when": "editorTextFocus && editorLangId == coq"},
-      {"key": "shift+ctrl+l", "mac": "shift+cmd+l", "command": "extension.coq.query.locate", "when": "editorTextFocus && editorLangId == coq"},
-      {"key": "shift+ctrl+c", "mac": "shift+cmd+c", "command": "extension.coq.query.check", "when": "editorTextFocus && editorLangId == coq"},
-      {"key": "shift+ctrl+p", "mac": "shift+cmd+p", "command": "extension.coq.query.print", "when": "editorTextFocus && editorLangId == coq"},
+      {"key": "ctrl+c ctrl+i", "command": "extension.rocq.query.prompt.locate", "when": "editorTextFocus && editorLangId == rocq"},
+      {"key": "shift+ctrl+a", "mac": "shift+cmd+a", "command": "extension.rocq.query.about", "when": "editorTextFocus && editorLangId == rocq"},
+      {"key": "shift+ctrl+k", "mac": "shift+cmd+k", "command": "extension.rocq.query.searchAbout", "when": "editorTextFocus && editorLangId == rocq"},
+      {"key": "shift+ctrl+l", "mac": "shift+cmd+l", "command": "extension.rocq.query.locate", "when": "editorTextFocus && editorLangId == rocq"},
+      {"key": "shift+ctrl+c", "mac": "shift+cmd+c", "command": "extension.rocq.query.check", "when": "editorTextFocus && editorLangId == rocq"},
+      {"key": "shift+ctrl+p", "mac": "shift+cmd+p", "command": "extension.rocq.query.print", "when": "editorTextFocus && editorLangId == rocq"},
 
-      {"key": "shift+alt+i", "mac": "shift+ctrl+i", "command": "extension.coq.display.toggle.implicitArguments", "when": "editorTextFocus && editorLangId == coq"},
-      {"key": "shift+alt+i", "mac": "shift+ctrl+i", "command": "extension.coq.display.toggle.implicitArguments", "when": "resourceScheme==coq-view"},
-      {"key": "shift+alt+c", "mac": "shift+ctrl+c", "command": "extension.coq.display.toggle.coercions", "when": "editorTextFocus && editorLangId == coq"},
-      {"key": "shift+alt+c", "mac": "shift+ctrl+c", "command": "extension.coq.display.toggle.coercions", "when": "resourceScheme==coq-view"},
-      {"key": "shift+alt+n", "mac": "shift+ctrl+n", "command": "extension.coq.display.toggle.notations", "when": "editorTextFocus && editorLangId == coq"},
-      {"key": "shift+alt+n", "mac": "shift+ctrl+n", "command": "extension.coq.display.toggle.notations", "when": "resourceScheme==coq-view"}
+      {"key": "shift+alt+i", "mac": "shift+ctrl+i", "command": "extension.rocq.display.toggle.implicitArguments", "when": "editorTextFocus && editorLangId == rocq"},
+      {"key": "shift+alt+i", "mac": "shift+ctrl+i", "command": "extension.rocq.display.toggle.implicitArguments", "when": "resourceScheme==rocq-view"},
+      {"key": "shift+alt+c", "mac": "shift+ctrl+c", "command": "extension.rocq.display.toggle.coercions", "when": "editorTextFocus && editorLangId == rocq"},
+      {"key": "shift+alt+c", "mac": "shift+ctrl+c", "command": "extension.rocq.display.toggle.coercions", "when": "resourceScheme==rocq-view"},
+      {"key": "shift+alt+n", "mac": "shift+ctrl+n", "command": "extension.rocq.display.toggle.notations", "when": "editorTextFocus && editorLangId == rocq"},
+      {"key": "shift+alt+n", "mac": "shift+ctrl+n", "command": "extension.rocq.display.toggle.notations", "when": "resourceScheme==rocq-view"}
     ]
 	},
 	"devDependencies": {
